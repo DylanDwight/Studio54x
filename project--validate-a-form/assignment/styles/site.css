@@ -1,0 +1,395 @@
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham/GOTHMLIG.TTF")
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url("../fonts/gotham/GOTHMBOK.TTF")
+}
+
+@font-face {
+  font-family: "Gotham Med";
+  src: url("../fonts/gotham/GOTHMMED.TTF")
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Gotham", sans-serif;
+  background-color: #f7f7f6;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5px 0 20px 0;
+  background-color: white;
+}
+
+nav {
+  background-color: #72aabe;
+  margin-bottom: 0;
+  padding: 10px 0;
+}
+
+nav img {
+  width: 150px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 18px;
+  font-weight: normal;
+  font-variant: all-small-caps;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+}
+
+nav ul :nth-child(1) { order: 1; }
+nav ul :nth-child(5) { order: 2; }
+nav ul :nth-child(6) { order: 2; }
+nav ul :nth-child(7) { order: 2; }
+
+.current_page a {
+  color: black;
+  pointer-events: none;
+}
+
+a {
+  color: #3683d2;
+  font-family: "Gotham Med", sans-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 400px;
+  border-radius: 5px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+h1 {
+  color: #024258;
+  font-family: "Gotham Med", sans-serif;
+  text-align: center;
+}
+
+h2 {
+  color: #50a2c0;
+  font-family: "Gotham Book", sans-serif;
+}
+
+h1, h2 {
+  font-variant: small-caps;
+}
+
+hr {
+  color: #7c7b86;
+  margin: 15px auto;
+}
+
+figcaption {
+  font-variant: small-caps;
+  color: #424144;
+}
+
+.intro {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.intro figure {
+  margin: 0;
+}
+
+.welcome, .intro figure {
+  width: 90%;
+  margin: 0 25px;
+}
+
+.intro figure img {
+  width: 100%;
+}
+
+.welcome h1 {
+  font-size: 36px;
+  margin: 0 auto 10px auto;
+}
+
+.slogan {
+  color: #50a2c0;
+  font-size: 18px;
+  font-style: italic;
+  font-variant: all-small-caps;
+}
+
+.shortcut, .shortcut img {
+  width: 180px;
+  height: 125px;
+}
+
+.shortcut {
+  position: relative;
+  margin: 10px;
+}
+
+.shortcut a:hover {
+  opacity: 0.5;
+}
+
+.shortcut span {
+  position: absolute;
+  right: 0; bottom: 0; left: 0;
+  height: 25%;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  font-size: 28px;
+  color: #50a2c0;
+  background-color: rgba(255,255,255,0.85);
+}
+
+.services h2 {
+  margin-bottom: 5px;
+}
+
+.services div, .services figure {
+  width: 90%;
+  margin: 0 30px;
+}
+
+.services figure {
+  width: 40%;
+  margin: 0;
+}
+
+.services figure img {
+  width: 100%;
+}
+
+ul {
+  list-style: square;
+  font-variant: small-caps;
+  color: #424144;
+}
+
+.featured {
+  text-align: center;
+}
+
+.featured section {
+  align-items: baseline;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.faq {
+  margin: 15px 0;
+  padding: 10px;
+}
+
+.faq .expand, .faq .collapse {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.about div p, .about div figure {
+  width: 70%;
+  margin: 15px 30px;
+}
+
+.about div {
+  align-items: flex-start;
+  margin: 15px auto;
+}
+
+.about div figure img {
+  width: 100%;
+}
+
+.about div:first-of-type figure {
+  order: 1;
+}
+
+.about figcaption {
+  color: #3e9dbd;
+}
+
+.contact section {
+  flex: 1;
+  align-self: flex-start;
+  padding: 0 35px;
+}
+
+.contact section h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #3e9dbd;
+  font-size: 24px;
+  color: #3e9dbd;
+}
+
+.contact section p {
+  margin-bottom: 35px;
+}
+
+.contact section span {
+  font-weight: bold;
+}
+
+.contact_form {
+  display: flex;
+  flex-direction: row;
+  padding: 0 25px;
+}
+
+label {
+  font-family: "Gotham Book", sans-serif;
+  font-variant: small-caps;
+  font-size: 18px;
+  color: #3e9dbd;
+}
+
+input, textarea {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3e9dbd;
+  font-family: "Gotham", sans-serif;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  float: right;
+  width: 90px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #3e9dbd;
+  font-family: "Gotham Book", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3e9dbd;
+  background-color: white;
+}
+
+button:hover {
+  color: white;
+  background-color: #3e9dbd;
+  cursor: pointer;
+}
+
+footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  background-color: #72aabe;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer p {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 110%;
+  }
+
+  nav ul :nth-child(1) { order: 0; }
+  nav ul :nth-child(5) { order: 0; }
+  nav ul :nth-child(6) { order: 0; }
+  nav ul :nth-child(7) { order: 0; }
+
+  nav ul, .flexbox {
+    flex-direction: column;
+  }
+
+  .intro {
+    margin-bottom: 0;
+  }
+
+  .shortcut {
+    height: auto;
+    text-align: center;
+  }
+
+  .shortcut img {
+    display: none;
+  }
+
+  .shortcut span {
+    position: relative;
+  }
+
+  .services figure {
+    width: 90%;
+  }
+
+  .featured section {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .featured section:first-of-type figure {
+    width: 90%;
+  }
+
+  .featured section:first-of-type img {
+    width: 100%;
+  }
+
+  .intro figure {
+    display: none;
+  }
+
+  .about div:first-of-type figure {
+    order: 0;
+  }
+}
