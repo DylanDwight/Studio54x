@@ -1,75 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home | Studio 54x</title>
   <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="styles/site.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Home | Studio 54x</title>
+  <meta name="description" content="Studio 54x is a portrait, event, and wedding photography studio in Ithaca, NY, serving the Finger Lakes region since 2012."/>
+  <meta name="theme-color" content="#fbfaf8"/>
+  <link rel="canonical" href="https://studio54x.site/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Studio 54x"/>
+  <meta property="og:title" content="Home | Studio 54x"/>
+  <meta property="og:description" content="Studio 54x is a portrait, event, and wedding photography studio in Ithaca, NY, serving the Finger Lakes region since 2012."/>
+  <meta property="og:image" content="https://studio54x.site/images/embracing.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="images/logo.png"/>
+  <link rel="apple-touch-icon" href="images/logo.png"/>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&amp;display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"/>
+  <link rel="stylesheet" href="styles/site.css"/>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html"><img alt="Studio 54x Logo" src="images/logo.png"/></a></li>
-      <li class="current_page"><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="featured.html">Featured</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a class="brand" href="index.html" aria-label="Studio 54x — home">
+        <img src="images/logo.png" alt="Studio 54x" width="200" height="35"/>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav aria-label="Primary">
+        <ul class="nav-menu" id="nav-menu">
+          <li class="is-current"><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="portraits.html">Portraits</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="featured.html">Featured</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="nav-cta" href="contact.html">Book a consultation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <article class="content">
-      <div class="flexbox intro">
-        <figure>
-          <img alt="Getting ready to take a photo" src="images/taking-photos.jpg"/>
-        </figure>
-        <section class="welcome">
-          <h1>Welcome!</h1>
-          <hr/>
-          <h2 class="slogan">
-            Let us capture your precious moments.
-          </h2>
-          <p>
-            Studio 54x is a portrait, event, and commercial photography studio located in Ithaca, NY. We offer an array of services, including wedding, maternity, and graduation photography. Studio 54x has served the Finger Lakes region since 2012, so you can count on us to help you capture those moments in time that you'll cherish forever. Please enjoy browsing our website and reach out with any comments or questions!
-          </p>
-        </section>
+  <main id="main">
+    <section class="hero">
+      <img class="hero__media" src="images/embracing.jpg" alt="Newlyweds embracing at golden hour" fetchpriority="high" decoding="async"/>
+      <div class="wrap hero__inner">
+        <span class="eyebrow hero__eyebrow">Ithaca, NY &middot; Est. 2012</span>
+        <h1>Let us capture your precious moments.</h1>
+        <p>A portrait, event, and commercial photography studio serving the Finger Lakes region for over a decade.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="contact.html">Book a consultation</a>
+          <a class="btn btn--ghost" href="featured.html">View featured work</a>
+        </div>
       </div>
+    </section>
 
-      <section class="flexbox flex-wrap">
-        <div class="shortcut">
-          <a href="services.html">
-            <img alt="Camera" src="images/camera.jpg"/>
-            <span>All Services</span>
+    <section class="section">
+      <div class="wrap">
+        <div class="split split--media-first reveal">
+          <figure class="split__media">
+            <img src="images/taking-photos.jpg" alt="A Studio 54x photographer lining up a shot" loading="lazy" decoding="async"/>
+          </figure>
+          <div>
+            <span class="eyebrow">Welcome</span>
+            <h2 class="section-title">Moments in time, made to last.</h2>
+            <p class="lede">Studio 54x is a portrait, event, and commercial photography studio located in Ithaca, NY. We offer an array of services, including wedding, maternity, and graduation photography.</p>
+            <p>We have served the Finger Lakes region since 2012, so you can count on us to help you capture those moments you'll cherish forever. Browse our work and reach out with any questions &mdash; consultations are always complimentary.</p>
+            <div class="btn-row" style="margin-top: var(--space-6);">
+              <a class="btn btn--outline" href="about.html">About the studio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        <span class="eyebrow">What we shoot</span>
+        <h2 class="section-title">Sessions built around you</h2>
+        <div class="cards reveal" style="margin-top: var(--space-8);">
+          <a class="card" href="services.html">
+            <img src="images/camera.jpg" alt="Camera on a studio table" loading="lazy" decoding="async"/>
+            <span class="card__label">All services <small>Browse</small></span>
+          </a>
+          <a class="card" href="portraits.html">
+            <img src="images/holiday.jpg" alt="Family holiday portrait" loading="lazy" decoding="async"/>
+            <span class="card__label">Portraits <small>From $200</small></span>
+          </a>
+          <a class="card" href="events.html">
+            <img src="images/color_event.jpg" alt="Hands throwing colour in the air at an event" loading="lazy" decoding="async"/>
+            <span class="card__label">Events <small>From $400</small></span>
+          </a>
+          <a class="card" href="weddings.html">
+            <img src="images/couple-dance.jpg" alt="Couple during their first dance" loading="lazy" decoding="async"/>
+            <span class="card__label">Weddings <small>From $2,700</small></span>
           </a>
         </div>
-        <div class="shortcut">
-          <a href="portraits.html">
-            <img alt="Holiday photo for family" src="images/holiday.jpg"/>
-            <span>Portraits</span>
-          </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow">Selected work</span>
+        <h2 class="section-title">Recent favourites</h2>
+        <div style="margin-top: var(--space-8);" class="reveal">
+      <div class="gallery">
+        <figure>
+          <img src="images/couple-woods3.jpg" alt="Couple in the woods" loading="lazy" decoding="async"/>
+          <figcaption>Ashley &amp; Jacob</figcaption>
+        </figure>
+        <figure>
+          <img src="images/wedding-party.jpg" alt="Wedding reception" loading="lazy" decoding="async"/>
+          <figcaption>The Johnson wedding</figcaption>
+        </figure>
+        <figure>
+          <img src="images/portrait.jpg" alt="Three sisters" loading="lazy" decoding="async"/>
+          <figcaption>The Edwards sisters</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gala.jpg" alt="Tables around a stage at a gala" loading="lazy" decoding="async"/>
+          <figcaption>The Founder's Day Gala</figcaption>
+        </figure>
+      </div>
         </div>
-        <div class="shortcut">
-          <a href="events.html">
-            <img alt="Hands and color in air" src="images/color_event.jpg"/>
-            <span>Events</span>
-          </a>
+        <div class="btn-row" style="margin-top: var(--space-8);">
+          <a class="btn btn--outline" href="featured.html">See the full gallery</a>
         </div>
-        <div class="shortcut">
-          <a href="weddings.html">
-            <img alt="Couple's first dance" src="images/couple-dance.jpg"/>
-            <span>Weddings</span>
-          </a>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Let's plan your session.</h2>
+        <p>Consultations are complimentary and commitment-free. Tell us about your day and we'll build a package around it.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="contact.html">Book a consultation</a>
+          <a class="btn btn--ghost" href="services.html">See all services</a>
         </div>
-      </section>
-    </article>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>
-      All images on this site are solely the property of Studio 54x. These photographs are protected by copyright laws and are not to be downloaded, printed, or reproduced without express written permission.
-    </p>
-    <p>© 2018 Studio 54x</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Studio 54x" width="200" height="35" loading="lazy"/>
+          <p>Portrait, event, and commercial photography in Ithaca, NY. Serving the Finger Lakes region since 2012.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="portraits.html">Portraits</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Studio</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="featured.html">Featured &amp; press</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Visit</h3>
+          <ul>
+            <li>54 X Street<br/>Ithaca, NY 14850</li>
+            <li>Mon–Thu, 12–7PM<br/>Fri–Sat by appointment</li>
+            <li><a href="mailto:hello@studio54x.site">hello@studio54x.site</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>All images on this site are solely the property of Studio 54x. These photographs are protected by copyright laws and are not to be downloaded, printed, or reproduced without express written permission.</p>
+        <p>&copy; <span data-year>2026</span> Studio 54x</p>
+      </div>
+    </div>
   </footer>
+
+  <script src="scripts/site.js" defer></script>
 </body>
 </html>

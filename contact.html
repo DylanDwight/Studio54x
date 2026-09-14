@@ -1,76 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Contact | Studio 54x</title>
   <meta charset="utf-8"/>
-  <link rel="stylesheet" type="text/css" href="styles/site.css">
-  <script src="scripts/jquery-3.2.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Contact | Studio 54x</title>
+  <meta name="description" content="Contact Studio 54x in Ithaca, NY to book a complimentary photography consultation."/>
+  <meta name="theme-color" content="#fbfaf8"/>
+  <link rel="canonical" href="https://studio54x.site/contact.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Studio 54x"/>
+  <meta property="og:title" content="Contact | Studio 54x"/>
+  <meta property="og:description" content="Contact Studio 54x in Ithaca, NY to book a complimentary photography consultation."/>
+  <meta property="og:image" content="https://studio54x.site/images/camera.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="icon" href="images/logo.png"/>
+  <link rel="apple-touch-icon" href="images/logo.png"/>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&amp;display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"/>
+  <link rel="stylesheet" href="styles/site.css"/>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html"><img alt="Studio 54x Logo" src="images/logo.png"/></a></li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="featured.html">Featured</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="about.html">About</a></li>
-      <li class="current_page"><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a class="brand" href="index.html" aria-label="Studio 54x — home">
+        <img src="images/logo.png" alt="Studio 54x" width="200" height="35"/>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav aria-label="Primary">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="portraits.html">Portraits</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="featured.html">Featured</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="is-current"><a class="nav-cta" href="contact.html">Book a consultation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <article class="content">
-      <h1>Contact Us</h1>
-      <div class="flexbox contact">
-        <section>
-          <h2>Hours of Operation</h2>
-          <p>
-            <span>Monday-Thursday:</span> 12-7PM <br/>
-            <span>Friday-Saturday:</span> by appointment
-          </p>
-          <h2>Location</h2>
-          <p>
-            54 X Street <br/>
-            Ithaca, NY 14850
-          </p>
-          <h2>Phone</h2>
-          <p>
-            54X-XXX-XXXX
-          </p>
-        </section>
-        <section class="contact_form">
-          <form id="contact" method="post" action="contact.html" novalidate>
-            <label for="name">Name</label>
-            <!-- INSERT ERROR MESSAGE FOR "name" BELOW -->
-            
-            <!-- INSERT ERROR MESSAGE FOR "name" ABOVE -->
-            <input type="text" id="name" name="name" required/>
-
-            <label for="email">Email</label>
-            <!-- INSERT ERROR MESSAGE FOR "email" BELOW -->
-            
-            <!-- INSERT ERROR MESSAGE FOR "email" ABOVE -->
-            <input type="email" id="email" name="email" required/>
-
-            <label for="message">Message</label>
-            <!-- INSERT ERROR MESSAGE FOR "message" BELOW -->
-            
-            <!-- INSERT ERROR MESSAGE FOR "message" ABOVE -->
-            <textarea id="message" name="message" rows=6 required></textarea>
-
-            <input id="contact_submit" type="submit" value="Submit">
-          </form>
-        </section>
+  <main id="main">
+    <section class="page-head">
+      <div class="wrap">
+        <h1 class="page-title">Contact us</h1>
+        <p class="lede">Tell us about your session and we'll be in touch to schedule a complimentary 30-minute consultation.</p>
       </div>
-    </article>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="reveal">
+            <div class="info-block">
+              <h2>Hours of operation</h2>
+              <p>Monday&ndash;Thursday: 12&ndash;7PM<br/>Friday&ndash;Saturday: by appointment</p>
+            </div>
+            <div class="info-block">
+              <h2>Location</h2>
+              <p>54 X Street<br/>Ithaca, NY 14850</p>
+            </div>
+            <div class="info-block">
+              <h2>Phone</h2>
+              <p>54X-XXX-XXXX</p>
+            </div>
+            <div class="info-block">
+              <h2>Email</h2>
+              <p><a href="mailto:hello@studio54x.site">hello@studio54x.site</a></p>
+            </div>
+          </div>
+
+          <form class="form reveal" id="contact-form" data-email="hello@studio54x.site" novalidate>
+            <div id="form-status" class="form__status" role="status" aria-live="polite"></div>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required/>
+              <span class="error">Please tell us your name.</span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required/>
+              <span class="error">Please enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span style="text-transform:none;letter-spacing:0;font-weight:400;">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel"/>
+            </div>
+            <div class="field">
+              <label for="session">Session type</label>
+              <select id="session" name="session">
+                <option>Wedding</option>
+                <option>Event</option>
+                <option>Portrait &ndash; in studio</option>
+                <option>Portrait &ndash; on location</option>
+                <option>Commercial</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+              <span class="error">Please add a short message so we can help.</span>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn--primary" type="submit">Send request</button>
+            </div>
+            <p class="form__note">Submitting opens your email app with the details filled in, addressed to hello@studio54x.site.</p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>
-      All images on this site are solely the property of Studio 54x. These photographs are protected by copyright laws and are not to be downloaded, printed, or reproduced without express written permission.
-    </p>
-    <p>© 2018 Studio 54x</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="Studio 54x" width="200" height="35" loading="lazy"/>
+          <p>Portrait, event, and commercial photography in Ithaca, NY. Serving the Finger Lakes region since 2012.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="weddings.html">Weddings</a></li>
+            <li><a href="portraits.html">Portraits</a></li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Studio</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="featured.html">Featured &amp; press</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Visit</h3>
+          <ul>
+            <li>54 X Street<br/>Ithaca, NY 14850</li>
+            <li>Mon–Thu, 12–7PM<br/>Fri–Sat by appointment</li>
+            <li><a href="mailto:hello@studio54x.site">hello@studio54x.site</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>All images on this site are solely the property of Studio 54x. These photographs are protected by copyright laws and are not to be downloaded, printed, or reproduced without express written permission.</p>
+        <p>&copy; <span data-year>2026</span> Studio 54x</p>
+      </div>
+    </div>
   </footer>
+
+  <script src="scripts/site.js" defer></script>
 </body>
 </html>
