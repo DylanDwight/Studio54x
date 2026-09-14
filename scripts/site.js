@@ -10,12 +10,14 @@
     if (!menu || !toggle) return;
     menu.classList.remove("is-open");
     toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
   }
 
   if (toggle && menu) {
     toggle.addEventListener("click", function () {
       var open = menu.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("nav-open", open);
     });
 
     menu.addEventListener("click", function (e) {
@@ -56,6 +58,26 @@
         });
       }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
       revealables.forEach(function (el) { io.observe(el); });
+    }
+  }
+
+  /* ---- Mobile action bar: reveal after the first screen ---- */
+  var bar = document.getElementById("mobile-bar");
+  if (bar) {
+    var isContact = /contact\.html$/.test(window.location.pathname);
+    if (isContact) {
+      bar.parentNode.removeChild(bar);
+      document.body.classList.add("no-bar");
+    } else {
+      var barOn = function () {
+        var y = window.scrollY;
+        var docEnd = document.body.scrollHeight - window.innerHeight - 160;
+        var show = y > window.innerHeight * 0.55 && y < docEnd;
+        bar.classList.toggle("is-visible", show);
+        bar.setAttribute("aria-hidden", show ? "false" : "true");
+      };
+      barOn();
+      window.addEventListener("scroll", barOn, { passive: true });
     }
   }
 

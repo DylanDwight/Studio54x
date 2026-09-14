@@ -58,6 +58,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 1rem);
 }
@@ -255,23 +256,42 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* Mobile drawer (default, mobile-first) */
 .nav-menu {
   position: fixed;
-  inset: var(--header-h) 0 auto 0;
+  inset: var(--header-h) 0 0 0;
   display: grid;
+  align-content: start;
   gap: var(--space-1);
-  max-height: calc(100dvh - var(--header-h));
+  height: calc(100dvh - var(--header-h));
   overflow-y: auto;
-  padding: var(--space-4) var(--gutter) var(--space-8);
+  overscroll-behavior: contain;
+  padding: var(--space-6) var(--gutter) calc(var(--space-12) + env(safe-area-inset-bottom));
   background: var(--paper);
-  border-bottom: 1px solid var(--line);
-  transform: translateY(-12px);
+  transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+  transition: opacity 0.3s var(--ease), transform 0.35s var(--ease), visibility 0.35s;
 }
-.nav-menu.is-open { transform: translateY(0); opacity: 1; visibility: visible; }
-.nav-menu a:not(.nav-cta) { padding: 0.7rem 0; font-size: var(--text-lg); border-bottom: 1px solid var(--line); }
+.nav-menu.is-open { transform: translateX(0); opacity: 1; visibility: visible; }
+.nav-menu a:not(.nav-cta) {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.35rem 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.nav-menu .is-current > a:not(.nav-cta) { color: var(--accent); }
 .nav-menu li:last-child a { border-bottom: 0; }
-.nav-menu .nav-cta { width: 100%; margin-top: var(--space-3); padding: 0.85rem 1.2rem; border-bottom: 0; font-size: var(--text-base); }
+.nav-menu .nav-cta {
+  width: 100%;
+  margin-top: var(--space-6);
+  padding: 1rem 1.2rem;
+  border-bottom: 0;
+  font-size: var(--text-base);
+}
+body.nav-open { overflow: hidden; }
 
 @media (min-width: 880px) {
   .nav-toggle { display: none; }
@@ -280,6 +300,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
     display: flex;
     align-items: center;
     gap: clamp(1rem, 2vw, 1.9rem);
+    height: auto;
     max-height: none;
     padding: 0;
     background: none;
@@ -289,7 +310,15 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
     visibility: visible;
     overflow: visible;
   }
-  .nav-menu a:not(.nav-cta) { padding: 0; font-size: var(--text-sm); border-bottom: 0; }
+  .nav-menu a:not(.nav-cta) {
+    min-height: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    border-bottom: 0;
+  }
   .nav-menu .nav-cta { margin-top: 0; padding: 0.55rem 1.05rem; font-size: var(--text-sm); border-bottom: 0; }
 }
 
@@ -298,7 +327,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   position: relative;
   display: grid;
   align-items: end;
-  min-height: min(78vh, 640px);
+  min-height: min(78svh, 640px);
   padding-block: clamp(3.5rem, 12vw, 7rem);
   color: #fff;
   background: #1c1f22;
@@ -769,4 +798,150 @@ details.faq summary:hover { background: var(--accent-wash); }
     transition-duration: 0.001ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* =========================================================
+   Mobile refinements (≤ 760px)
+   Denser rhythm, edge-to-edge media, swipeable rails,
+   thumb-reachable actions.
+   ========================================================= */
+
+/* Sticky action bar — appears once the hero scrolls away */
+.mobile-bar {
+  position: fixed;
+  z-index: 90;
+  inset: auto 0 0 0;
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.6rem var(--gutter) calc(0.6rem + env(safe-area-inset-bottom));
+  background: rgba(251, 250, 248, 0.92);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--line);
+  transform: translateY(115%);
+  transition: transform 0.35s var(--ease);
+}
+.mobile-bar.is-visible { transform: translateY(0); }
+.mobile-bar__link {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 46px;
+  padding: 0 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.mobile-bar__link:hover { text-decoration: none; }
+.mobile-bar__cta { flex: 1; }
+
+@media (max-width: 879px) {
+  .mobile-bar { display: flex; }
+  body { padding-bottom: 0; }
+  /* keep the footer clear of the bar */
+  .site-footer { padding-bottom: calc(var(--space-8) + 4.6rem + env(safe-area-inset-bottom)); }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --section-y: 3rem;
+    --text-2xl: 1.85rem;
+    --header-h: 60px;
+  }
+
+  body { font-size: 1.0125rem; line-height: 1.6; }
+
+  /* Hero: taller, tighter type, full-width thumb-sized buttons */
+  .hero { min-height: min(86svh, 700px); padding-block: 4rem 2.5rem; }
+  .hero h1 { font-size: clamp(2.5rem, 11vw, 3.4rem); max-width: 13ch; }
+  .hero p { font-size: var(--text-base); max-width: 34ch; }
+  .hero .btn-row { margin-top: var(--space-6); gap: var(--space-2); }
+  .hero .btn-row .btn { flex: 1 1 100%; }
+
+  .page-head { padding-block: 2.25rem 1.5rem; }
+
+  /* Category cards become a swipeable rail */
+  .cards {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    grid-template-columns: none;
+    gap: var(--space-3);
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--gutter);
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .cards::-webkit-scrollbar { display: none; }
+  .cards > * { scroll-snap-align: start; }
+  .cards .card img { aspect-ratio: 3 / 4; }
+  .card__label { font-size: 1.25rem; padding: var(--space-8) var(--space-4) var(--space-4); }
+
+  /* Gallery: two-up mosaic instead of one tall column */
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .gallery img { aspect-ratio: 1 / 1; border-radius: 8px; }
+  .gallery--portrait img { aspect-ratio: 3 / 4; }
+  .gallery figcaption { font-size: 0.72rem; line-height: 1.35; }
+  /* first tile of a gallery spans the full width as a lead image */
+  .gallery > figure:first-child { grid-column: 1 / -1; }
+  .gallery > figure:first-child img { aspect-ratio: 4 / 3; }
+
+  /* Editorial splits: let the image breathe edge-to-edge */
+  .split { gap: var(--space-6); }
+  .split__media img { border-radius: 10px; }
+
+  /* Panels and forms: less inset, more content */
+  .panel, .form { padding: 1.15rem; border-radius: 10px; }
+  .form .btn-row .btn { flex: 1 1 100%; }
+  .field textarea { min-height: 130px; }
+  .panel-grid { gap: var(--space-4); }
+  details.faq summary { padding: 1rem 1.1rem; font-size: var(--text-base); gap: var(--space-3); }
+  .faq__body { padding: 0 1.1rem 1.1rem; }
+  .note { padding: var(--space-3) var(--space-4); }
+
+  /* Footer links get real tap targets */
+  .footer-grid ul { gap: 0; }
+  .footer-grid li { padding: 0.1rem 0; }
+  .footer-grid a { display: inline-flex; align-items: center; min-height: 40px; }
+  .footer-bottom { font-size: 0.72rem; }
+
+  /* CTA band + footer */
+  .cta-band { padding-block: 3rem; }
+  .cta-band .btn-row { margin-top: var(--space-6); }
+  .cta-band .btn-row .btn { flex: 1 1 100%; }
+  .site-footer { padding-top: var(--space-12); }
+  .footer-grid { gap: var(--space-8); }
+  .footer-bottom { margin-top: var(--space-8); }
+
+  /* Reveal animation: shorter travel so it never feels laggy on a phone */
+  .reveal { transform: translateY(10px); transition-duration: 0.5s; }
+}
+
+@media (max-width: 420px) {
+  .gallery { gap: 0.5rem; }
+  .cards { grid-auto-columns: 84%; }
+  .hero h1 { font-size: clamp(2.3rem, 11.5vw, 3rem); }
+}
+
+/* No hover lift on touch devices — it only causes sticky states */
+@media (hover: none) {
+  .btn:hover { transform: none; }
+  .card:hover img { transform: none; }
+  .gallery figure:hover img { transform: none; }
+  details.faq summary:hover { background: transparent; }
+}
+
+@media (max-width: 879px) {
+  body.no-bar .site-footer { padding-bottom: calc(var(--space-8) + env(safe-area-inset-bottom)); }
 }
