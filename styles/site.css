@@ -248,6 +248,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   color: #fff !important;
   font-size: var(--text-sm);
   font-weight: 500;
+  white-space: nowrap;
 }
 .nav-cta:hover { background: #0b3f50; text-decoration: none; }
 
